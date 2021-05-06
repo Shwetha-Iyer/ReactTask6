@@ -17,6 +17,15 @@ export default function Useredit(props){
         setEmail(data.email);
         setPassword(data.password);
     },[])
+    let goback = ()=>{
+      history.push("/users");
+    }
+    let remove = async () =>{
+      await fetch(`https://60746f03066e7e0017e79e59.mockapi.io/userreact/${props.match.params.id}`, {
+        method: "DELETE",
+      });
+      history.push("/users");
+    }
     let userSubmit = async (e)=>{
         e.preventDefault();
         await fetch(`https://60746f03066e7e0017e79e59.mockapi.io/userreact/${props.match.params.id}`,{
@@ -60,7 +69,9 @@ export default function Useredit(props){
             </div>
           </div>
           <div className="row mt-3">
-          <input type="submit" className="btn btn-primary" value="Save"/>
+          <input type="submit" className="btn btn-primary" value="Save"/> &nbsp;&nbsp;&nbsp;
+          <button type="reset" className="btn btn-warning" onClick={goback}> Cancel </button> &nbsp;&nbsp;&nbsp;
+          <button type="button" className="btn btn-danger" onClick={remove}> Delete </button>
           </div>
         </div>
       </form>

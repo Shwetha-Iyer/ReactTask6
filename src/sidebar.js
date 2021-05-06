@@ -43,7 +43,7 @@ export default function Sidebar(){
     <Link to="/products" className="nav-link collapsed" data-toggle="collapse" data-target="#collapseUtilities"
         aria-expanded="true" aria-controls="collapseUtilities">
         <i className="fas fa-fw fa-wrench"></i>
-        <span>Car Products</span>
+        <span>Products</span>
     </Link>
     
 </li>
